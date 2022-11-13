@@ -1,34 +1,32 @@
 import Link from "next/link";
 import styles from "../../styles/Home.module.css";
-import Image from "next/image";
 
-
-
-const make_initial_hand = (prop:any) => {
-
+interface CardData {
+    name: string;
+    effectText: string;
 }
 
 
+const Game = () => {
+    let cardData: CardData = {name:'銅貨', effectText:'効果内容'};
 
-
-function game() {
     return(
-    <div className={styles.container}>
-        <main >
-            <Link href="/">
-                &larr; back
-            </Link>
+        <div className={styles.container}>
+            <main >
+                <Link href="/">
+                    &larr; back
+                </Link>
 
-            <div className={styles.grid}>
-                <div className={styles.card}>
-                    <h2>Game &rarr;</h2>
-                    <p>ゲームを開始する</p>
+                <div className={styles.grid}>
+                    <div className={styles.card}>
+                        <h2>{cardData.name}</h2>
+                        <p>{cardData.effectText}</p>
+                    </div>
                 </div>
-            </div>
-        </main>
-    </div>
-        )
+            </main>
+        </div>
+    )
 
 }
 
-export default game;
+export default Game;
